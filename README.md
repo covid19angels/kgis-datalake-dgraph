@@ -91,14 +91,7 @@ Dgraph Alpha will now be running and listening for HTTP requests on port 8080 an
 1. [![Movie Schema](document/movies-schema.png)](https://blog.dgraph.io/post/client0.8.0/)
 
 
-# 开发工作流程
+# 使用生成的kgis graphql client sdk开发
 1. 在目录dgraphschemadesign设计编写到kgis-dgschema.graphql，按照[dgraph的graphql支持模块](https://dgraph.io/graphql)设计
 1. 按照上面【快速开发参考】把【io.github.kgis-dgschema.graphql】更新schema到dgraph数据库中
-1. 按照[APOLLO集成方法](APOLLO.md)下载dgraph的graphql schema定义schema.json到目录【src/main/graphql/dgraph】
-1. 按照[APOLLO集成方法](APOLLO.md)把dgraph的graphql查询语句保存到【src/main/graphql/dgraph】如query-users.graphql
-1. 按照[APOLLO集成方法](APOLLO.md)把dgraph的graphql schema 和query通过【generateApolloSources】生成java代码
-1. 好的，用APOLLO生成的dgraph 查询代码编写其他业务逻辑处理代码
-
-
-
-
+1. 使用改造过的[shopify graphql client code gen](https://github.com/covid19angels/graphql-java-client-codegen-gradle-plugin)生成的kgis query/mutation等辅助java类，编写业务处理逻辑
