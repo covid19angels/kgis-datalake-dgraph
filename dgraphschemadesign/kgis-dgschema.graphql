@@ -871,3 +871,216 @@ enum PoderStatus{
     PoderProcessing
     PoderReturned
 }
+
+"""
+项目组织，以实现精心计划的特定目标
+an individual or collaborative enterprise that is carefully planned to achieve a particular aim.
+"""
+type Project implements Thing & Organization &  Node{
+
+    """
+    可以访问的会话
+    """
+    availableConversations: [Conversation]
+
+    """
+    本组织默认可访问的会话
+    """
+    defaultConversation: Conversation
+
+    """
+    参照(组织之间或特定主题的人员之间的一个或多个消息。 可以使用isPartOf或hasPart属性将个人消息链接到会话。)
+    """
+    hasPart: [Task]
+
+    """
+    项目业主赞助人
+    """
+    sponsor: [Party]
+
+    """
+    项目管理员
+    """
+    managers: [User]
+}
+
+"""
+Issue问题，进行讨论项目中的想法、改进、任务、缺陷
+An Issue is a place to discuss ideas, enhancements, tasks, and bugs for a project.
+"""
+type Issue implements Thing & Node{
+
+    """
+    Issue创建人
+    """
+    creator: User
+
+    """
+    处理人，A list of Users assigned to this object.
+    """
+    assignees: [User]
+
+    """
+    参与者，A list of Users that are participating in the Issue conversation.
+    """
+    participants:  [User]
+
+    """
+    处理本Issue的任务
+    """
+    tasks: [Task]
+}
+
+
+"""
+工单或任务，需要计划在某段时间内完成的工作
+"""
+type Task implements Thing & Node{
+
+    """
+    The subject matter of the content.
+    """
+    about: Issue
+
+    """
+    参照(组织之间或特定主题的人员之间的一个或多个消息。 可以使用isPartOf或hasPart属性将个人消息链接到会话。)
+    """
+    isPartOf: Project
+
+    """
+    任务WBS编号
+    """
+    wbsNO: String
+
+    """
+    任务优先级
+    """
+    priority: TaskPriority
+
+    """
+    任务创建人
+    """
+    creator: User
+
+    """
+    任务关注人
+    """
+    watcher: [User]
+
+    """
+    任务计划开始时间
+    """
+    planStart: DateTime
+
+    """
+    任务计划结束时间
+    """
+    planFinish: DateTime
+
+    """
+    任务完成百分比
+    """
+    percentComplete: Int
+
+    """
+    任务创建时间
+    """
+    createdAt: DateTime!
+
+    """
+    任务修改时间
+    """
+    updatedAt: DateTime!
+
+    """
+    任务上级
+    """
+    parentTask: Task
+
+    """
+    任务前一条
+    """
+    previousTask: Task
+
+    """
+    任务下级
+    """
+    subTasks: [Task]
+
+    """
+    任务依赖
+    """
+    dependsOn: [Task]
+
+    """
+    任务分配历史
+    """
+    assignments: [TaskAssignment]
+
+    """
+    任务状态
+    """
+    status: TaskStatus
+}
+
+"""
+任务优先级
+"""
+enum TaskPriority{
+    HIGHEST
+    HIGH
+    MEDIUM
+    LOW
+    LOWEST
+}
+
+"""
+任务分派
+"""
+type TaskAssignment implements Thing & Node{
+    """
+    相关任务
+    """
+    about: Task
+
+    """
+    任务本次分配说明
+    """
+    comment: Review
+
+    """
+    任务执行人
+    """
+    assignee: Party
+
+    """
+    任务分配人
+    """
+    assigner: Party
+
+    """
+    任务执行人阅读时间
+    """
+    readAt: DateTime!
+
+    """
+    任务执行人接收时间
+    """
+    acceptedAt: DateTime!
+
+    """
+    任务分配时间
+    """
+    assignedAt: DateTime!
+}
+
+"""
+任务状态
+"""
+enum TaskStatus{
+    NEW
+    INPROGRESS
+    CANCELLED
+    ASSIGNED
+    CLOSED
+}

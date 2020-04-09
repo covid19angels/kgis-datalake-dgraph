@@ -11,6 +11,7 @@
 1. 启动All in One开发模式的dgraph服务
     ```
     docker run -p 8080:8080 -it -v /mnt/dgraph:/dgraph dgraph/standalone:v2.0.0-rc1
+    docker run --rm -it -p 8000:8000 -p 8080:8080 -p 9080:9080 dgraph/standalone:latest
     ```
 1. 把上述schema创建到Dgraph服务上
     ```
