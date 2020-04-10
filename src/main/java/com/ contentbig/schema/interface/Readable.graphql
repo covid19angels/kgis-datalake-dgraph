@@ -1,0 +1,9 @@
+"""
+可读物
+"""
+interface Readable{
+    """
+    【阅读收条】 记录每个人阅读本条消息的时间,逆属性: ReadNote.isReadNoteOf
+    """
+    hasReadNotes: [ReadNote]
+}

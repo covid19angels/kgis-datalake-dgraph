@@ -14,11 +14,10 @@
     docker run --rm -it -p 8000:8000 -p 8080:8080 -p 9080:9080 dgraph/standalone:latest
     ```
 1. 把上述schema创建到Dgraph服务上
-    ```
-    
-    $ cd ~/git/netifi-kgmovies/kgis-datalake/dgraphschemadesign
-
-    $ curl -X POST localhost:8080/admin/schema -d '@kgis-dgschema.graphql'
+    ```    
+    $ ../gradlew schemamerge 
+   
+    $ curl -X POST localhost:8080/admin/schema -d '@build/schema-merged.graphql'
 
     ```
 1. [Ratel查看生成的dgraph schema](https://play.dgraph.io)
