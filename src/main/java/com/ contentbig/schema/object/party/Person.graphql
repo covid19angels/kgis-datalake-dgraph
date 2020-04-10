@@ -1,0 +1,19 @@
+
+"""
+个人,可能在平台里有一个且唯一的用户账号User
+"""
+type Person implements Party &  Thing & Node{
+    """
+    个人身份证ID
+    """
+    personalID: String!
+
+    """【姓】 姓。 在美国，是一个人姓名中的最后一个字。 Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property."""
+    familyName: String
+
+    """【名】 名。在美国，是一个人名字中的第一个字 Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property."""
+    givenName: String
+
+    """本人所拥有的用户账号，逆属性User.isUserOf，参考Inverse property: isPartOf"""
+    hasUser: User @hasInverse(field: "isUserOf")
+}

@@ -1,0 +1,26 @@
+"""
+Canonical URL: http://cnschema.org/DataCatalog
+【数据目录】数据集的目录 A collection of datasets.
+"""
+type DataCatalog implements  Thing & Node{
+
+    """
+    【所在父数据集目录】所在的父数据集目录 A data catalog which contains this dataset.
+    """
+    parentDataCatalog: DataCatalog
+
+    """
+    【包含子数据集目录】包含子的数据集目录
+    """
+    subDataCatalogs: [DataCatalog]
+
+    """
+    【作者】 该 CreativeWork 的创作者/作者。
+    """
+    creator: User
+
+    """
+    【创建日期】 创作出CreativeWork的日期。 The date on which the CreativeWork was created or the item was added to a DataFeed. dateCreated    DateTime or Date or DataFeedItem or CreativeWork
+    """
+    dateCreated: DateTime
+}

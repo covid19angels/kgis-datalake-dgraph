@@ -1,0 +1,92 @@
+
+
+"""
+工单或任务，需要计划在某段时间内完成的工作
+"""
+type Task implements Thing & Node{
+
+    """
+    The subject matter of the content.
+    """
+    about: Issue
+
+    """
+    参照(组织之间或特定主题的人员之间的一个或多个消息。 可以使用isPartOf或hasPart属性将个人消息链接到会话。)
+    """
+    isPartOf: Project
+
+    """
+    任务WBS编号
+    """
+    wbsNO: String
+
+    """
+    任务优先级
+    """
+    priority: TaskPriority
+
+    """
+    任务创建人
+    """
+    creator: User
+
+    """
+    任务关注人
+    """
+    watcher: [User]
+
+    """
+    任务计划开始时间
+    """
+    planStart: DateTime
+
+    """
+    任务计划结束时间
+    """
+    planFinish: DateTime
+
+    """
+    任务完成百分比
+    """
+    percentComplete: Int
+
+    """
+    任务创建时间
+    """
+    createdAt: DateTime!
+
+    """
+    任务修改时间
+    """
+    updatedAt: DateTime!
+
+    """
+    任务上级
+    """
+    parentTask: Task
+
+    """
+    任务前一条
+    """
+    previousTask: Task
+
+    """
+    任务下级
+    """
+    subTasks: [Task]
+
+    """
+    任务依赖
+    """
+    dependsOn: [Task]
+
+    """
+    任务分配历史
+    """
+    assignments: [TaskAssignment]
+
+    """
+    任务状态
+    """
+    status: TaskStatus
+}

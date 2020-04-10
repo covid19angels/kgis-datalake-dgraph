@@ -1,0 +1,13 @@
+
+enum PoderStatus{
+    PoderCancelled
+    PoderDelivered
+    PoderInTransit
+    PoderPaymentDue
+    PoderUNPAID
+    PoderPAID
+    PoderPickupAvailable
+    PoderProblem
+    PoderProcessing
+    PoderReturned
+}

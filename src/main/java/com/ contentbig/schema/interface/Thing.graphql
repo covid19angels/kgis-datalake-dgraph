@@ -1,0 +1,30 @@
+
+"""
+A Thing with an ID，在KGIS平台内所有内容都是东西Thing,也就是资源Resource
+"""
+interface Thing {
+
+    """
+    资源对象所属的namespaces
+    """
+    namespaces:  [Namespace!]
+
+    """
+    【标识符】 标识符 The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc.
+    """
+    identifier: String
+
+    """
+    【名称】name    Text    The name of the item.
+    """
+    name: String! @search(by: [hash])
+
+    """
+    【别名】 该项的别名。 An alias for the item.
+    """
+    alternateName: String
+
+    """【描述】 该项的一个简单描述。 A description of the item."""
+    description: String
+
+}

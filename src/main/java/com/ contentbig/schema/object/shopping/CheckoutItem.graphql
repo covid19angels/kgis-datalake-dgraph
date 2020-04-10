@@ -1,0 +1,23 @@
+
+"""
+A single line item in the checkout, grouped by variant and attributes.
+结算单内容项
+"""
+type CheckoutItem implements Thing & Node{
+    """
+    所属结算单
+    """
+    isItemOf: Checkout  @hasInverse(field: "items")
+
+    """
+    The quantity of the line item.
+    """
+    quantity: Int!
+
+    """
+    Product/Service variant of the line item.
+    """
+    variant: Shoppingable
+
+}
+

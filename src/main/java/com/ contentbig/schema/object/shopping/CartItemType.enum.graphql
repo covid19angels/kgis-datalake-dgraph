@@ -1,0 +1,9 @@
+
+"""
+购物车内物品、服务、优惠券等类型
+"""
+enum CartItemType {
+    SKU
+    TAX
+    SHIPPING
+}

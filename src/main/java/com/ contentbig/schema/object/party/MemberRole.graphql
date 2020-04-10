@@ -1,0 +1,10 @@
+
+"""
+[【会员角色】OrganizationRole的子类，描述会员关系,有时间限制](http://cnschema.org/EmployeeRole)
+"""
+type MemberRole implements  Thing & Node & PartyRole{
+    """
+    【会员编号】
+    """
+    number: String
+}

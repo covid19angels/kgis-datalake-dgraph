@@ -1,0 +1,30 @@
+
+"""
+商品供应
+"""
+type Offer implements  Thing & Node{
+    """
+    可购物的一个商品供应
+    """
+    itemOffered: Shoppingable
+
+    """
+    供应商品的组织或个人 Inverse property: makesOffer.
+    """
+    offeredBy: Party
+
+    """
+    商品价格The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.
+    """
+    price: Int
+
+    """
+    【价格有效开始日期】
+    """
+    dateFrom: DateTime
+
+    """
+    【价格有效结束日期】
+    """
+    dateThrough: DateTime
+}

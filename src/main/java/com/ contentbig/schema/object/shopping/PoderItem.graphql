@@ -1,0 +1,34 @@
+
+"""
+https://schema.org/PoderItem
+An poder item is a line of an poder. It includes the quantity and shipping details of a bought offer.
+购物订单内容项
+"""
+type PoderItem implements Thing & Node{
+
+    """
+    partOfPoder    Poder    The overall poder the items in this delivery were included in.
+    """
+    isItemOf:    Poder @hasInverse(field: "items")
+
+    """
+    poderItemNumber    Text    The identifier of the poder item.
+    """
+    poderItemNumber: String
+
+    """
+    poderItemStatus    PoderStatus    The current status of the poder item.
+    """
+    poderItemStatus:    PoderStatus
+
+    """
+    poderQuantity    Number    The number of the item podered. If the property is not set, assume the quantity is one.
+    """
+    poderQuantity: Int
+
+    """
+    poderedItem    PoderItem  or Product  or Service
+    """
+    poderedItem: Shoppingable
+
+}

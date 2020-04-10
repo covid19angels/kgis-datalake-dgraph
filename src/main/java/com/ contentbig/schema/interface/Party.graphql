@@ -1,0 +1,16 @@
+
+"""
+Party 团体:代表有行动能力的个人或组织
+"""
+interface Party{
+    """
+    【拥有】 组织或个人拥有的产品 逆属性 Ownable.ownedBy，Products owned by the organization or person.
+    """
+    owns: [Ownership]
+
+    """
+    拥有的namespace
+    """
+    hasNamespaces: [Namespace!]
+
+}

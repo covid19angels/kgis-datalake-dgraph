@@ -1,0 +1,16 @@
+
+"""
+购物车
+"""
+type Cart implements Thing & Node{
+    """
+    购物车所有者
+    """
+    owner: User!
+
+    email: String
+    items: [CartItem!] @hasInverse(field: "isItemOf")
+    notes: String
+    createdAt: DateTime
+    updatedAt: DateTime
+}

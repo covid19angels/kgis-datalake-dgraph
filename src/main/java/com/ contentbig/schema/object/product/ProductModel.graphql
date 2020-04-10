@@ -1,0 +1,11 @@
+
+"""
+产品型号
+"""
+type ProductModel implements Shoppingable &  Thing & Node{
+
+    """
+    【产品】 所属产品。
+    """
+    isModelOf: Product @hasInverse(field: "hasModels")
+}

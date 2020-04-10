@@ -1,0 +1,8 @@
+
+"""
+[【社交关注角色】FollowerRole)
+"""
+type FollowerRole implements  Thing & Node & PartyRole{
+    """关注设置,如关注最新产品信息"""
+    settings: String
+}

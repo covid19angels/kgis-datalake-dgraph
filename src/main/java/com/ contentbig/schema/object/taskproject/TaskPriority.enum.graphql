@@ -1,0 +1,10 @@
+"""
+任务优先级
+"""
+enum TaskPriority{
+    HIGHEST
+    HIGH
+    MEDIUM
+    LOW
+    LOWEST
+}

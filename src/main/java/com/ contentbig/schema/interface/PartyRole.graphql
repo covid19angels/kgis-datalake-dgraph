@@ -1,0 +1,25 @@
+
+"""
+【团体内部定义的角色】
+"""
+interface PartyRole {
+    """
+    在组织承担角色的个人
+    """
+    person: Person
+
+    """
+    个人在团体内承担的角色
+    """
+    roleName: PartyRoleName
+
+    """
+    【开始日期】 某事的开始日期和时间
+    """
+    dateFrom: DateTime
+
+    """
+    【结束日期】 活动（事件）结束时间。 The end date and time of the item (in ISO 8601 date format).
+    """
+    dateThrough: DateTime
+}

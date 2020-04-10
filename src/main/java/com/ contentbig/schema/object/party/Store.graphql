@@ -1,0 +1,35 @@
+
+"""
+零售店铺
+"""
+type Store implements  Thing & Node & Organization & Party {
+    """
+    【雇员】 组织的雇员.在组织承担角色的个人有时间限制
+    """
+    employees: [EmployeeRole]
+
+    """
+    【关注组织的人】 社交网络上本组织被别人关注
+    """
+    followers: [FollowerRole]
+
+    """
+    【会员】 组织或项目的成员,在组织承担角色的个人有时间限制
+    """
+    members: [MemberRole]
+
+    """
+    【创建日期】
+    """
+    dateCreated:    DateTime
+
+    """
+    【更新日期】
+    """
+    dateModified: DateTime
+
+    """
+    【创建人】 该物体的创作者/作者。
+    """
+    creator: User
+}

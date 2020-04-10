@@ -1,0 +1,31 @@
+
+"""
+描述产品的所有者或所属机构的信息
+"""
+type Ownership implements  Thing & Node{
+
+    """
+    【获取来源】 产品获取的机构来源 The organization or person from which the product was acquired.
+    """
+    acquiredFrom: Party
+
+    """
+    【东西类型】 拥有的东西Thing。
+    """
+    owned: Thing
+
+    """
+    【个人或组织】拥有者
+    """
+    owner: Party
+
+    """
+    【开始日期】 某事的开始日期和时间
+    """
+    dateFrom: DateTime
+
+    """
+    【结束日期】 活动（事件）结束时间。 The end date and time of the item (in ISO 8601 date format).
+    """
+    dateThrough: DateTime
+}

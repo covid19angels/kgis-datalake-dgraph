@@ -1,0 +1,29 @@
+"""
+【评论】对项目的评论 - 例如对博客文章的评论。 该评论的内容是通过text属性表示的，其主题通过about，与所有CreativeWorks共享的属性来表达 A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the text property, and its topic via about, properties shared with all CreativeWorks.
+"""
+type Review implements  Thing & Node{
+    """itemReviewed    Thing    The item that is being reviewed/rated."""
+    itemReviewed:    Thing
+
+    """reviewAspect    Text    This Review or Rating is relevant to this part or facet of the itemReviewed."""
+    reviewAspect: String
+
+    """reviewBody    Text    The actual body of the review."""
+    reviewBody: String
+
+    """
+    ratingValue    评分 The rating for the content.
+    """
+    ratingValue: Int
+
+    """
+    【作者】 此内容或评分的作者。
+    """
+    author:    User
+
+    """
+    【创建日期】 创作出CreativeWork的日期。
+    """
+    dateCreated: DateTime
+}
+

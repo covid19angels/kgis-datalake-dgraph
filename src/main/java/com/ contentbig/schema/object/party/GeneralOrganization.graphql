@@ -1,0 +1,16 @@
+
+"""
+【一般机构】一个组织，例如学校、非政府组织、公司、俱乐部等 An organization such as a school, NGO, corporation, club, etc.
+也用于临时几个人组成的聊天小组，房间
+http://cnschema.org/Organization
+"""
+type GeneralOrganization  implements  Thing & Node & Organization & Party {
+
+    """可以访问的会话"""
+    availableConversations: [Conversation]
+
+    """ 本组织默认可访问的会话 """
+    defaultConversation: Conversation
+
+}
+

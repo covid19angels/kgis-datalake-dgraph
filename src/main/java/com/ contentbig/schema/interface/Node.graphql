@@ -1,0 +1,8 @@
+"""An object with an ID"""
+interface Node {
+    """
+    The id of the thing.
+    The id: ID! in Thing means that an auto-generated ID by Dgraph will be used to identify things.
+    """
+    id: ID!
+}

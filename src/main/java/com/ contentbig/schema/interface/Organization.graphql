@@ -1,0 +1,26 @@
+"""
+【机构】一个组织，例如学校、非政府组织、公司、俱乐部等,也可用于临时几个人组成的聊天小组，房间
+"""
+interface Organization {
+
+    """
+    【上级组织】 subOrganization的反向属性，即包含这个组织的更大组织
+    """
+    parentOrganization: [Organization]
+
+    """
+    【子机构】 两个组织之间的关系。其中第二个组织，例如以子公司的名字，属于第一个组织。
+    """
+    subOrganizations: [Organization]
+
+    """
+    【部门】 组织与该组织某个部门之间的关系，也被描述成组织（允许不同的网址，标识，开放时间）。 例如：一家有药店的商店，或者是一间带咖啡厅的面包店。 A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+    """
+    departments: [Organization]
+
+    """
+    组织定义的角色名称,hasPartyRoleName,逆属性 PartyRoleName.isPartyRoleNameOf
+    """
+    hasPartyRoleName: [PartyRoleName]
+
+}

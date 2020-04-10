@@ -1,0 +1,39 @@
+"""
+任务分派
+"""
+type TaskAssignment implements Thing & Node{
+    """
+    相关任务
+    """
+    about: Task
+
+    """
+    任务本次分配说明
+    """
+    comment: Review
+
+    """
+    任务执行人
+    """
+    assignee: Party
+
+    """
+    任务分配人
+    """
+    assigner: Party
+
+    """
+    任务执行人阅读时间
+    """
+    readAt: DateTime!
+
+    """
+    任务执行人接收时间
+    """
+    acceptedAt: DateTime!
+
+    """
+    任务分配时间
+    """
+    assignedAt: DateTime!
+}

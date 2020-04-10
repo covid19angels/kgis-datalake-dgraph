@@ -1,0 +1,40 @@
+"""
+【对话】组织之间或特定主题的人员之间的一个或多个消息。 可以使用isPartOf或hasPart属性将个人消息链接到会话。 One or more messages between organizations or people on a particular topic. Individual messages can be linked to the conversation with isPartOf or hasPart properties.
+"""
+type Conversation implements  Thing & Node{
+
+    """
+    【关于】 事物的关于信息 The subject matter of the content.
+    """
+    about: Thing
+
+    """
+    【负责人】 对CreativeWork负有法律责任的特定的人。 Specifies the Person that is legally accountable for the CreativeWork.
+    """
+    accountablePerson: User
+
+    """
+    【作者】 该 CreativeWork 的创作者/作者。
+    """
+    creator: User
+
+    """
+    【创建日期】 创作出CreativeWork的日期。 The date on which the CreativeWork was created or the item was added to a DataFeed. dateCreated    DateTime or Date or DataFeedItem or CreativeWork
+    """
+    dateCreated: DateTime
+
+    """
+    【所在数据集目录】所在的数据集目录 A data catalog which contains this dataset.
+    """
+    includedInDataCatalog: DataCatalog
+
+    """
+    参照 hasPart【作品组件】 表示某个作品是该作品的一部分
+    """
+    hasMessages: [Message]
+
+    """
+    本会话Conversation给第三方软件如Github、阿里云代码创建的webhook，第三方软件向本会话推送事件消息
+    """
+    webhook: [Webhook]
+}

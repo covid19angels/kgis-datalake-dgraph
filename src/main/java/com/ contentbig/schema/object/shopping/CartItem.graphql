@@ -1,0 +1,16 @@
+
+"""
+购物车内物品、服务、优惠券等
+"""
+type CartItem  implements Thing & Node{
+
+    """
+    所属购物车,
+    """
+    isItemOf: Cart  @hasInverse(field: "items")
+
+    type: CartItemType!
+    quantity: Int!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}

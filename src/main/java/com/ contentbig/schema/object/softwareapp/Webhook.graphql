@@ -1,0 +1,36 @@
+
+"""
+网络钩子是“用户定义的HTTP回调”。[2]网络钩子通常被某些事件激活，比如将代码推送到源[3]或评论博客。[4]当此事件发生时，原网站将向为网络钩子配置的URL发送HTTP请求。用户可配置它们引发网页上的事件以调用另一个网站的行为。Webhooks allow external services to be notified when certain events happen.
+"""
+type Webhook implements  Thing & Node{
+    """
+    回调url
+    """
+    payloadUrl: String
+
+    """
+    回调提交的数据内容类型如application/json
+    """
+    contentType: String
+
+    """
+    使用payloadUrl的安全token
+    """
+    secret: String
+
+    """
+    【作者】 该 CreativeWork 的创作者/作者。
+    """
+    creator: User
+
+    """
+    【创建日期】 创作出CreativeWork的日期。 The date on which the CreativeWork was created or the item was added to a DataFeed. dateCreated    DateTime or Date or DataFeedItem or CreativeWork
+    """
+    dateCreated: DateTime
+
+    """
+    调用此webhook的客户端
+    """
+    client: SoftwareApplication
+
+}

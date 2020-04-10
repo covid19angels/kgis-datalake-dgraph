@@ -1,0 +1,10 @@
+
+"""
+[【雇员角色】OrganizationRole的子类，描述雇员关系,有时间限制](http://cnschema.org/EmployeeRole)
+"""
+type EmployeeRole implements  Thing & Node & PartyRole{
+    """
+    【员工编号】
+    """
+    number: String
+}

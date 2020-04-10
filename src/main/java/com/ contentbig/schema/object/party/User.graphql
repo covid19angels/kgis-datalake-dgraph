@@ -1,0 +1,26 @@
+"""
+用户账号
+"""
+type User implements  Thing & Node{
+
+    """
+    The username used to login.
+    We also want to make sure that usernames are unique. The @id directive takes care of that - it also automatically adds hash searching, so we can drop the @search(by: [hash]), though having it also causes no harm.
+    """
+    username: String! @id
+
+    """
+    The password used to login.
+    """
+    password: String!
+
+    """
+    The user's public profile bio.
+    """
+    bio: String
+
+    """
+    用户账号对应的人，有账号一定有相关的Person，逆属性 Person.hasUser，参考Inverse property: hasPart
+    """
+    isUserOf: Person @hasInverse(field: "hasUser")
+}

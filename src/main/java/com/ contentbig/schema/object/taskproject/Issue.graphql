@@ -1,0 +1,27 @@
+
+"""
+Issue问题，进行讨论项目中的想法、改进、任务、缺陷
+An Issue is a place to discuss ideas, enhancements, tasks, and bugs for a project.
+"""
+type Issue implements Thing & Node{
+
+    """
+    Issue创建人
+    """
+    creator: User
+
+    """
+    处理人，A list of Users assigned to this object.
+    """
+    assignees: [User]
+
+    """
+    参与者，A list of Users that are participating in the Issue conversation.
+    """
+    participants:  [User]
+
+    """
+    处理本Issue的任务
+    """
+    tasks: [Task]
+}

@@ -1,0 +1,21 @@
+"""
+【阅读收条】 记录每个人阅读本条消息的时间
+"""
+type ReadNote implements  Thing & Node{
+
+    """
+    【阅读内容】 逆属性: Message.hasReadNotes
+    """
+    isReadNoteOf: [Readable]
+
+    """
+    【读者】 内容的阅读者。
+    """
+    reader: User
+
+    """
+    【阅读日期】
+    """
+    dateRead: DateTime
+}
+

@@ -1,0 +1,32 @@
+
+"""
+项目组织，以实现精心计划的特定目标
+an individual or collaborative enterprise that is carefully planned to achieve a particular aim.
+"""
+type Project implements Thing & Organization &  Node{
+
+    """
+    可以访问的会话
+    """
+    availableConversations: [Conversation]
+
+    """
+    本组织默认可访问的会话
+    """
+    defaultConversation: Conversation
+
+    """
+    参照(组织之间或特定主题的人员之间的一个或多个消息。 可以使用isPartOf或hasPart属性将个人消息链接到会话。)
+    """
+    hasPart: [Task]
+
+    """
+    项目业主赞助人
+    """
+    sponsor: [Party]
+
+    """
+    项目管理员
+    """
+    managers: [User]
+}
