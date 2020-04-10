@@ -1,8 +1,0 @@
-
-"""
-可购物：可以购买订购的产品或服务Product，Service
-"""
-interface Shoppingable{
-    """可以购买订购的产品或服务Product，Service"""
-    isShoppingable: Boolean
-}

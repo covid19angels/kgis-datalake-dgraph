@@ -17,7 +17,7 @@ type CheckoutItem implements Thing & Node{
     """
     Product/Service variant of the line item.
     """
-    variant: Shoppingable
+    variant: Saleable
 
 }
 

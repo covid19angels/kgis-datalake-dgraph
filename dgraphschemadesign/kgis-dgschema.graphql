@@ -40,9 +40,9 @@ interface Thing {
 """
 可购物：可以购买订购的产品或服务Product，Service
 """
-interface Shoppingable{
+interface Saleable{
     """可以购买订购的产品或服务Product，Service"""
-    isShoppingable: Boolean
+    isSaleable: Boolean
 }
 
 """
@@ -492,7 +492,7 @@ type Store implements  Thing & Node & Organization & Party {
 """
 产品
 """
-type Product implements Shoppingable &  Thing & Node{
+type Product implements Saleable &  Thing & Node{
 
     """
     【型号】 产品的型号。
@@ -504,7 +504,7 @@ type Product implements Shoppingable &  Thing & Node{
 """
 产品型号
 """
-type ProductModel implements Shoppingable &  Thing & Node{
+type ProductModel implements Saleable &  Thing & Node{
 
     """
     【产品】 所属产品。
@@ -519,7 +519,7 @@ type Offer implements  Thing & Node{
     """
     可购物的一个商品供应
     """
-    itemOffered: Shoppingable
+    itemOffered: Saleable
 
     """
     供应商品的组织或个人 Inverse property: makesOffer.
@@ -757,7 +757,7 @@ type CheckoutItem implements Thing & Node{
     """
     Product/Service variant of the line item.
     """
-    variant: Shoppingable
+    variant: Saleable
 
 }
 
@@ -855,7 +855,7 @@ type PoderItem implements Thing & Node{
     """
     poderedItem    PoderItem  or Product  or Service
     """
-    poderedItem: Shoppingable
+    poderedItem: Saleable
 
 }
 

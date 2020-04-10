@@ -2,7 +2,7 @@
 """
 产品型号
 """
-type ProductModel implements Shoppingable &  Thing & Node{
+type ProductModel implements Saleable &  Thing & Node{
 
     """
     【产品】 所属产品。

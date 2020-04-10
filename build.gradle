@@ -57,6 +57,7 @@ dependencies {
 
     compileOnly "org.projectlombok:lombok:1.18.8"
     annotationProcessor "org.projectlombok:lombok:1.18.8"
+    implementation 'org.figurate:gradle-curl-plugin:1.0.2'
 }
 
 mainClassName = 'com.contentbig.KgisApplication'
@@ -86,14 +87,33 @@ sourceSets {
 }
 
 
-task schemamerge(type: SourceTask) {
+task schemaMerge(type: SourceTask) {
     source 'src'
     include '**/*.graphql'
     outputs.file new File(buildDir, "schema-merged.graphql")
 
     doLast {
+        println "========schemaMerge to build/schema-merged.graphql"
         ant.concat(destfile: outputs.files.singleFile) {
             source.addToAntBuilder(ant, 'fileset', FileCollection.AntType.FileSet)
+        }
+        println "========schemaMerge success~"
+    }
+}
+
+task schemaUpdate(dependsOn: schemaMerge) {
+    doLast {
+        def command = "curl -X POST localhost:8080/admin/schema -d '@build/schema-merged.graphql'"
+        println "========schemaUpdate command:" + command
+        try {
+            exec {
+                ExecSpec execSpec ->
+                    executable 'bash'
+                    args '-c', command
+            }
+            println "========schemaUpdate success~"
+        } catch (Exception e) {
+            e.printStackTrace()
         }
     }
 }

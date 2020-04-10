@@ -1,0 +1,10 @@
+
+"""
+可购物：可以购买订购的产品或服务Product，Service
+"""
+interface Saleable{
+    """
+    可以购买订购的产品或服务Product，Service
+    """
+    isSaleable: Boolean
+}

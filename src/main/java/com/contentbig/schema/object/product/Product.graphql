@@ -2,7 +2,7 @@
 """
 产品
 """
-type Product implements Shoppingable &  Thing & Node{
+type Product implements Saleable &  Thing & Node{
 
     """
     【型号】 产品的型号。

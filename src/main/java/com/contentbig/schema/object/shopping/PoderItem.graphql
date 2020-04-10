@@ -29,6 +29,6 @@ type PoderItem implements Thing & Node{
     """
     poderedItem    PoderItem  or Product  or Service
     """
-    poderedItem: Shoppingable
+    poderedItem: Saleable
 
 }
