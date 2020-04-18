@@ -62,7 +62,9 @@ plugins {
     id 'com.bmuschko.docker-remote-api' version '3.4.4'
 }
 
+// 阿波罗插件
 apply plugin: 'com.apollographql.apollo'
+// 上传到maven仓库
 apply plugin: 'maven'
 
 
