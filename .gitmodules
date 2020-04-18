@@ -1,3 +1,0 @@
-[submodule "graphql-java-client-codegen-gradle-plugin"]
-	path = graphql-java-client-codegen-gradle-plugin	
-	url = https://github.com/covid19angels/graphql-java-client-codegen-gradle-plugin.git
