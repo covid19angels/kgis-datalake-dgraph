@@ -1,0 +1,19 @@
+PATH
+  remote: graphql-java-client-codegen-gradle-plugin
+  specs:
+    graphql_java_gen (0.1.0)
+      graphql_schema (~> 0.1.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    graphql_schema (0.1.6)
+
+PLATFORMS
+  java
+
+DEPENDENCIES
+  graphql_java_gen!
+
+BUNDLED WITH
+   1.16.6
