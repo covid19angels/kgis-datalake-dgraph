@@ -168,7 +168,7 @@ dependencies {
 
 }
 
-task printSomePrettyOutputPlease(type: JRubyExec) {
+task genJavaCode(type: JRubyExec) {
     description "Execute our nice local print-script.rb"
     //script "bundle"
     script "${projectDir}/update_schema.rb"
