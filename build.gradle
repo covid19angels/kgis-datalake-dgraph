@@ -3,9 +3,11 @@ buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
-        google()
+        maven { url 'https://maven.google.com' }
         jcenter()
+
         maven { url "https://dl.bintray.com/graphql-java-kickstart/releases" }
+        maven { url "https://dl.bintray.com/jruby-gradle/plugins" }
         maven { url "https://plugins.gradle.org/m2/" }
         maven { url 'https://repo.spring.io/plugins-release' }
         maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
@@ -15,7 +17,7 @@ buildscript {
         maven { url 'http://mirrors.ibiblio.org/pub/mirrors/maven2/' }
         maven { url 'http://repository.jboss.org/nexus/content/groups/public' }
         maven { url 'http://maven.oschina.net/content/groups/public/' }
-        maven { url 'http://maven.net.cn/content/groups/public/' }
+//        maven { url 'http://maven.net.cn/content/groups/public/' }
         maven { url 'https://repository.jboss.org/nexus/content/repositories/releases/' }
 
         maven {
@@ -38,8 +40,8 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.4.RELEASE")
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.12'
         // jruby
-        classpath "com.github.jruby-gradle:jruby-gradle-plugin:[1.1.2,1.2)"
-
+       classpath "com.github.jruby-gradle:jruby-gradle-plugin:[1.1.2,1.2)"
+      //  classpath "com.github.jruby-gradle:jruby-gradle-plugin:2.0.0"
         // okhttp
         classpath "com.squareup.okhttp3:okhttp:3.14.0"
         classpath "com.google.code.gson:gson:2.8.5"
@@ -53,8 +55,8 @@ buildscript {
 plugins {
     //id "com.github.hierynomus.license" version "0.14.0"
     id "net.saliman.properties" version "1.4.6"
-    id 'org.springframework.boot' version '2.2.4.RELEASE' apply false
-    id "io.spring.dependency-management" version "1.0.9.RELEASE" apply false
+    id 'org.springframework.boot' version '2.2.4.RELEASE'
+    id "io.spring.dependency-management" version "1.0.9.RELEASE"
     id 'java'
     id "idea"
     id 'application'
@@ -81,8 +83,7 @@ repositories {
 
 dependencies {
 
-    compileOnly "org.projectlombok:lombok:1.18.8"
-    annotationProcessor "org.projectlombok:lombok:1.18.8"
+
     implementation 'org.figurate:gradle-curl-plugin:1.0.2'
 
     implementation "com.bdlbsc:graphql-supper:latest"
@@ -92,7 +93,13 @@ dependencies {
     compile "io.reactivex.rxjava2:rxjava:2.0.6"
     compile group: 'org.json', name: 'json', version: '20190722'
 
+    compile 'org.jruby:jruby-complete:9.2.9.0'
 
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 }
 
 mainClassName = 'com.contentbig.KgisApplication'
@@ -164,9 +171,18 @@ import com.github.jrubygradle.JRubyExec
 dependencies {
 
     jrubyExec "rubygems:bundler:1.16.1+"
-    //jrubyExec "rubygems:graphql_java_gen:0.1.1"
+//    jrubyExec "rubygems:bundler:2.1.4+"
+    jrubyExec "rubygems:graphql_java_gen:0.1.1"
 
 }
+
+//
+//task deleteSchema(type: Delete)
+//{
+//    File("src/main/graphql/schema.json")
+//
+//}
+
 
 task genJavaCode(type: JRubyExec) {
     description "Execute our nice local print-script.rb"
