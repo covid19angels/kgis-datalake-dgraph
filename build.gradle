@@ -13,10 +13,10 @@ buildscript {
         maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
-        maven { url 'http://uk.maven.org/maven2/' }
+//        maven { url 'http://uk.maven.org/maven2/' }
         maven { url 'http://mirrors.ibiblio.org/pub/mirrors/maven2/' }
         maven { url 'http://repository.jboss.org/nexus/content/groups/public' }
-        maven { url 'http://maven.oschina.net/content/groups/public/' }
+//        maven { url 'http://maven.oschina.net/content/groups/public/' }
 //        maven { url 'http://maven.net.cn/content/groups/public/' }
         maven { url 'https://repository.jboss.org/nexus/content/repositories/releases/' }
 
@@ -60,7 +60,6 @@ plugins {
     id 'java'
     id "idea"
     id 'application'
-    id "net.ltgt.apt" version "0.20"
     id 'com.bmuschko.docker-remote-api' version '3.4.4'
 }
 
