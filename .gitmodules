@@ -1,0 +1,3 @@
+[submodule "graphql-java-client-codegen"]
+	path = graphql-java-client-codegen
+	url = https://github.com/covid19angels/graphql-java-client-codegen.git
