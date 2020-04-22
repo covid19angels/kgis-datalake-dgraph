@@ -94,3 +94,7 @@ Dgraph Alpha will now be running and listening for HTTP requests on port 8080 an
 1. 在目录dgraphschemadesign设计编写到kgis-dgschema.graphql，按照[dgraph的graphql支持模块](https://dgraph.io/graphql)设计
 1. 按照上面【快速开发参考】把【io.github.kgis-dgschema.graphql】更新schema到dgraph数据库中
 1. 使用改造过的[shopify graphql client code gen](https://github.com/covid19angels/graphql-java-client-codegen-gradle-plugin)生成的kgis query/mutation等辅助java类，编写业务处理逻辑
+1. 更新git子模块
+    ```
+    $ git submodule update --recursive --init --remote
+    ```
