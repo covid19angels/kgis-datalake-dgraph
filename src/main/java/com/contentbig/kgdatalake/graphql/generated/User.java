@@ -5,9 +5,8 @@ package com.contentbig.kgdatalake.graphql.generated;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.shopify.graphql.support.AbstractResponse;
-import com.shopify.graphql.support.SchemaViolationError;
-
 import com.shopify.graphql.support.ID;
+import com.shopify.graphql.support.SchemaViolationError;
 
 import java.util.ArrayList;
 import java.util.List;

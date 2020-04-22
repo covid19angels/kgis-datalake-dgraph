@@ -2,9 +2,8 @@
 
 package com.contentbig.kgdatalake.graphql.generated;
 
-import com.shopify.graphql.support.Tuery;
 import com.shopify.graphql.support.Input;
-
+import com.shopify.graphql.support.Tuery;
 import org.joda.time.DateTime;
 
 import java.io.Serializable;

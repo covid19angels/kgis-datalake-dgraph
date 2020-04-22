@@ -3,9 +3,8 @@
 package com.contentbig.kgdatalake.graphql.generated;
 
 import com.shopify.graphql.support.Arguments;
-import com.shopify.graphql.support.Tuery;
-
 import com.shopify.graphql.support.ID;
+import com.shopify.graphql.support.Tuery;
 
 /**
 * 

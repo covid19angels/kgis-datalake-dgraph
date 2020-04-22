@@ -2,10 +2,9 @@
 
 package com.contentbig.kgdatalake.graphql.generated;
 
-import com.shopify.graphql.support.Tuery;
-import com.shopify.graphql.support.Input;
-
 import com.shopify.graphql.support.ID;
+import com.shopify.graphql.support.Input;
+import com.shopify.graphql.support.Tuery;
 
 import java.io.Serializable;
 import java.util.List;
