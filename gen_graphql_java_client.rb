@@ -8,7 +8,7 @@ require 'optparse'
 require 'net/http'
 require 'fileutils'
 
-target_filename = 'src/main/java/com/contentbig/kgdatalake/graphqlclient/generated'
+target_filename = 'src/main/java/com/contentbig/kgdatalake/graphql/generated'
 OptionParser.new do |opts|
   opts.on("-tFILENAME", "--target=FILENAME", "Target file name") do |filename|
     target_filename = filename
